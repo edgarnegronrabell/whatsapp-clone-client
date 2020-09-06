@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Tab, Nav, Button, Modal } from 'react-bootstrap'
-
+import { Tab, Nav} from 'react-bootstrap'
+import Conversations from './Conversations'
 import './Sidebar.css';
 
 const CONVERSATIONS_KEY = 'conversations'
@@ -31,7 +31,9 @@ export default function Sidebar({ id }) {
 					</Nav.Item>
 				</Nav>
 				<Tab.Content>
-					
+					<Tab.Pane eventKey={CONVERSATIONS_KEY}>
+						<Conversations />
+					</Tab.Pane>
 				</Tab.Content>
 			</Tab.Container>
 	 	</section>
