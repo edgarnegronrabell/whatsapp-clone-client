@@ -1,30 +1,50 @@
 import React, { useRef } from 'react';
-import { Section, Container, Form } from 'react-bulma-components';
+import { Container, Form, Button } from 'react-bootstrap'
+import { v4 as uuidV4 } from 'uuid'
+
+import './Login.css';
 
 
-export default function Login() {
-	const { Field, Control, Label, Input } = Form;
+export default function Login({ onIdSubmit }) {
 
 	const idRef = useRef()
+	const handleSubmit = e => {
+		e.preventDefault()
 
+		onIdSubmit(idRef.current.value)
+	}
+
+	const createNewId = () => {
+		onIdSubmit(uuidV4())
+	}
 	return (
-		<Section>
-			<Container>
-				<Form>
-					<Field>
-						<Label>
-							Enter Your Id
-						</Label>
-						<Control>
-							<Input 
+		<section className="LoginSection">
+			<Container className="align-items-center">
+				<Form 
+					className="form"
+					onSubmit={handleSubmit}
+				>
+					<Form.Group>
+						<Form.Label>Enter Your Id</Form.Label>
+							<Form.Control 
 							type="text"
+							className="control" 
 							ref={idRef}
 							required>
-							</Input>
-						</Control>
-					</Field>
+							</Form.Control>
+					</Form.Group>
+						<Button 
+							type="submit"
+							color="info">
+							Login
+						</Button>
+						<Button 
+							onClick={createNewId}
+							color="primary">
+							Create A New Id
+						</Button>
 				</Form>
 			</Container>
-		</Section>
+		</section>
 		)
 }

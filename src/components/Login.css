@@ -1,0 +1,14 @@
+.LoginSection .align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.LoginSection .align-items-center form {
+  width: 100%;
+}
+/*# sourceMappingURL=Login.css.map */
