@@ -1,9 +1,7 @@
 {
-    "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAC;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,KAAK;CAChB",
-    "sources": [
-        "Sidebar.scss"
-    ],
-    "names": [],
-    "file": "Sidebar.css"
+"version": 3,
+"mappings": "AAAA,eAAgB;EACf,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,KAAK;EAEhB,oBAAK;IACJ,eAAe,EAAE,MAAM;EAGxB,4BAAa;IACZ,YAAY,EAAE,iBAAiB;IAC/B,SAAS,EAAE,CAAC;IACZ,QAAQ,EAAE,IAAI",
+"sources": ["Sidebar.scss"],
+"names": [],
+"file": "Sidebar.css"
 }
