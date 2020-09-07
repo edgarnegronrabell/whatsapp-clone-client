@@ -23,7 +23,7 @@ export default function Sidebar({ id }) {
 		<section
 			className="SidebarSection">
 			<Tab.Container  
-				activKey={activeKey} 
+				activeKey={activeKey} 
 				onSelect={setActiveKey}>
 				<Nav variant="tabs">
 					<Nav.Item>
@@ -62,8 +62,8 @@ export default function Sidebar({ id }) {
 				show={modalOpen}
 				onHide={closeModal}>
 			{conversationsOpen ?
-				<NewConversationModal closeModal={closeModal}/> :
-				<NewContactModal closeModal={closeModal}/>
+				<NewConversationModal closeModal={closeModal} /> :
+				<NewContactModal closeModal={closeModal} />
 			}
 			</Modal>
 	 	</section>

@@ -11,7 +11,8 @@ export default function NewContactModal({ closeModal }) {
     e.preventDefault()
     
     createContact(idRef.current.value, nameRef.current.value)
-  } closeModal()
+    closeModal()
+  } 
 
     return(
         <React.Fragment>
