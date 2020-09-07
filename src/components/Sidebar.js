@@ -3,6 +3,8 @@ import { Tab, Nav, Button, Modal } from 'react-bootstrap'
 import Conversations from './Conversations'
 import Contacts from './Contacts'
 import './Sidebar.css';
+import NewContactModal from './NewContactModal'
+import NewConversationModal from './NewConversationModal'
 
 const CONVERSATIONS_KEY = 'conversations'
 const CONTACTS_KEY = 'contacts'
@@ -10,7 +12,12 @@ const CONTACTS_KEY = 'contacts'
 
 export default function Sidebar({ id }) {
 	const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
+	const [modalOpen, setModalOpen] = useState(false)
 	const conversationsOpen = activeKey === CONVERSATIONS_KEY
+	
+	function closeModal() {
+		setModalOpen(false)
+	}
 	
 	return (
 		<section
@@ -45,15 +52,18 @@ export default function Sidebar({ id }) {
 				Your Id: <span className="text-muted">{id}</span>
 				</div>
 				<Button 
+					onClick={() => setModalOpen(true)}
 					className="rounded-0">
 				New {conversationsOpen ? 'Conversation' : 'Contact' }
 				</Button>
 			</Tab.Container>
 			
-			<Modal>
+			<Modal 
+				show={modalOpen}
+				onHide={closeModal}>
 			{conversationsOpen ?
-				<NewConversationModal /> :
-				<NewContactModal />
+				<NewConversationModal closeModal={closeModal}/> :
+				<NewContactModal closeModal={closeModal}/>
 			}
 			</Modal>
 	 	</section>
